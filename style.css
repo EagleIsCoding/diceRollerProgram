@@ -1,0 +1,195 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+body {
+    margin: 0;
+    font-family: 'Rubik', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+    animation: fadeIn 0.8s ease-out 0.2s backwards;
+    padding: 20px;
+    box-sizing: border-box;
+    color: #333;
+}
+
+#diceContainer {
+    font-family: 'Rubik', sans-serif;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    width: 100%;
+    max-width: 700px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), inset 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid #e0e0e0;
+    box-sizing: border-box;
+    animation: fadeIn 0.5s ease-out;
+    backdrop-filter: blur(5px);
+}
+
+#diceContainer:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #444;
+}
+
+#rollBtn {
+    font-size: 1.5rem;
+    padding: 15px 30px;
+    border-radius: 50px;
+    border: none;
+    background: linear-gradient(135deg, #007BFF, #0056b3);
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1), inset 0 0 5px rgba(0, 0, 0, 0.1);
+    animation: pulse 1.5s infinite;
+}
+
+#rollBtn:hover {
+    background: linear-gradient(135deg, #0056b3, #004080);
+}
+
+#rollBtn:active {
+    background: linear-gradient(135deg, #004080, #0056b3);
+}
+
+#diceInput {
+    margin: 25px 0;
+    font-size: 1.8rem;
+    width: 100%;
+    max-width: 150px;
+    padding: 5px;
+    border-radius: 10px;
+    margin-left: 20px;
+    border: 2px solid #007BFF;
+    text-align: center;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+}
+
+#diceInput:focus {
+    border-color: #0056b3;
+    outline: none;
+}
+
+#diceResults {
+    margin: 20px 0;
+    font-size: 1.5rem;
+    color: #007BFF;
+}
+
+#diceImgs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 25px 0;
+}
+
+#diceImgs img {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    border-radius: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#diceImgs img:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    #diceContainer {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    #rollBtn {
+        font-size: 1.2rem;
+        padding: 12px 24px;
+        margin-top: 15px;
+    }
+
+    #diceInput {
+        font-size: 1.5rem;
+        padding: 12px;
+        margin: 20px 0;
+    }
+
+    #diceResults {
+        font-size: 1.2rem;
+        margin: 20px 0;
+    }
+
+    #diceImgs img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    #diceContainer {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    #rollBtn {
+        font-size: 1rem;
+        padding: 10px 20px;
+        margin-top: 10px;
+    }
+
+    #diceInput {
+        font-size: 1.2rem;
+        padding: 10px;
+        margin: 15px 0;
+    }
+
+    #diceResults {
+        font-size: 1rem;
+        margin: 15px 0;
+    }
+
+    #diceImgs img {
+        width: 60px;
+        height: 60px;
+    }
+}
